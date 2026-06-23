@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Дрийм Тимът на Кройф и Кавалерът Стоичков</title>
+    <style>
+        :root {
+            --barca-blue: #004d98;
+            --barca-red: #a50044;
+            --gold: #edbb00;
+            --dark-bg: #111116;
+            --light-text: #f5f5f7;
+            --gray-text: #a1a1a6;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background-color: var(--dark-bg);
+            color: var(--light-text);
+            line-height: 1.8;
+            padding-bottom: 60px;
+        }
+
+        /* Хедър / Геройска секция */
+        header {
+            background: linear-gradient(rgba(0, 77, 152, 0.7), rgba(165, 0, 68, 0.7)), url('Барселона.jpg') no-repeat center center/cover;
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            border-bottom: 4px solid var(--gold);
+        }
+
+        header h1 {
+            font-size: 3.5rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            text-shadow: 3px 3px 10px rgba(0,0,0,0.8);
+        }
+
+        header p {
+            font-size: 1.5rem;
+            font-style: italic;
+            color: var(--gold);
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.8);
+        }
+
+        /* Навигация */
+        nav {
+            background-color: rgba(17, 17, 22, 0.95);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(237, 187, 0, 0.3);
+            text-align: center;
+            padding: 15px 0;
+        }
+
+        nav a {
+            color: var(--light-text);
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--gold);
+        }
+
+        /* Основно съдържание */
+        .container {
+            max-width: 1000px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        section {
+            margin-bottom: 80px;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            color: var(--gold);
+            border-bottom: 2px solid var(--barca-red);
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        p {
+            margin-bottom: 20px;
+            font-size: 1.15rem;
+            color: #e5e5ea;
+            text-align: justify;
+        }
+
+        /* Изображения и галерия */
+        .featured-img {
+            width: 100%;
+            max-height: 500px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            margin: 25px 0;
+            border: 1px solid rgba(237, 187, 0, 0.2);
+        }
+
+        .image-caption {
+            text-align: center;
+            font-style: italic;
+            color: var(--gray-text);
+            font-size: 0.95rem;
+            margin-top: -15px;
+            margin-bottom: 30px;
+        }
+
+        .grid-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .gallery-item {
+            background-color: #1c1c24;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .gallery-item p {
+            padding: 15px;
+            font-size: 0.95rem;
+            text-align: center;
+            margin: 0;
+        }
+
+        /* Цитати */
+        blockquote {
+            font-style: italic;
+            border-left: 4px solid var(--gold);
+            padding-left: 20px;
+            margin: 40px 0;
+            font-size: 1.3rem;
+            color: #f5f5f7;
+            background-color: rgba(165, 0, 68, 0.1);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        blockquote span {
+            display: block;
+            text-align: right;
+            font-size: 1rem;
+            color: var(--gold);
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        /* Футър */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: #0b0b0e;
+            border-top: 1px solid rgba(237, 187, 0, 0.2);
+            font-size: 0.9rem;
+            color: var(--gray-text);
+        }
+    </style>
+</head>
+<body>
+
+    <header id="начало">
+        <h1>Ерата на Величието</h1>
+        <p>Йохан Кройф, Христо Стоичков и раждането на „Дрийм Тима“</p>
+    </header>
+
+    <nav>
+        <a href="#кройф">Йохан Кройф</a>
+        <a href="#стоичков">Христо Стоичков</a>
+        <a href="#дрийм-тим">Отборът Мечта</a>
+        <a href="#галерия">Галерия</a>
+    </nav>
+
+    <div class="container">
+
+        <section id="кройф">
+            <h2>Архитектът на Модерния Футбол</h2>
+            <p>Когато Йохан Кройф пое треньорския пост в Барселона през 1988 година, клубът се намираше в дълбока криза. Легендарният нидерландец обаче не донесе просто нови тактики – той донесе изцяло нова философия, променила завинаги ДНК-то на каталунския гранд. Кройф наложи стила "Тотален футбол", базиран на бързи пасове, контрол над топката и постоянна преса.</p>
+            
+            <img src="Кройф.jpg" alt="Йохан Кройф дава указания край тъчлинията" class="featured-img">
+            <div class="image-caption">Изображение 1: Йохан Кройф – визионерът, който преобрази „Камп Ноу“</div>
+
+            <p>Неговата философия изискваше не просто атлети, а интелигентни футболисти с безупречна техника. Кройф изгради ядро от местни таланти от академията Ла Масия, съчетано с няколко световни звезди от най-висок калибър. Това беше началото на една от най-романтичните и доминиращи ери в историята на световния футбол.</p>
+            
+            <blockquote>
+                "Да играеш футбол е много просто, но да играеш прост футбол е най-трудното нещо, което съществува."
+                <span>– Йохан Кройф</span>
+            </blockquote>
+        </section>
+
+        <section id="стоичков">
+            <h2>Христо Стоичков: Моторът и Сърцето на Каталуния</h2>
+            <p>През 1990 година Йохан Кройф привлече в редиците си един яростен, експлозивен и невероятно талантлив българин – Христо Стоичков. Със своята гениална левачка, бързина и непоколебим характер, Стоичков се превърна в перфектното оръжие за схемата на Кройф.</p>
+            
+            <img src="Стоичков.jpg" alt="Христо Стоичков празнува гол с фланелката на Барселона" class="featured-img">
+            <div class="image-caption">Изображение 2: Кавалерът на Златната топка Христо Стоичков</div>
+
+            <p>Стоичков бързо стана любимец на феновете на „Камп Ноу“ заради своята страст и непримиримост на терена. Заедно с партньора си в атака Ромарио, те сформираха един от най-страховитите нападателни тандеми в историята. Връхната точка на неговата кариера в клуба дойде през 1994 година, когато спечели най-престижното индивидуално отличие – „Златната топка“, носейки гордо славата на България и Барселона.</p>
+        </section>
+
+        <section id="дрийм-тим">
+            <h2>Отборът Мечта (The Dream Team)</h2>
+            <p>Съставът на Барселона от началото на 90-те години заслужено получи наименованието „Дрийм Тим“. Този състав включваше легенди като Андони Субисарета, Роналд Куман, Алберт Ферер, Хосеп Гуардиола, Майкъл Лаудруп, Христо Стоичков и по-късно Ромарио. Те играеха футбол, който изглеждаше сякаш идва от бъдещето.</p>
+            
+            <p>Кулминацията на този състав дойде на 20 май 1992 година на стадион „Уембли“ в Лондон, когато Барселона спечели първата си КЕШ (Купа на европейските шампиони) в историята, побеждавайки Сампдория с 1:0 след паметен гол на Роналд Куман в продълженията. Освен това, отборът спечели четири поредни титли на Испания (Ла Лига) между 1991 и 1994 година.</p>
+        </section>
+
+        <section id="галерия">
+            <h2>Историческа фотогалерия</h2>
+            <p>Разгледайте уловените моменти от златните страници на каталунската история:</p>
+            
+            <div class="grid-gallery">
+                <div class="gallery-item">
+                    <img src="Уембли_1992.jpg" alt="Триумфът на Уембли 1992">
+                    <p>Снимка 1: Вдигането на първата КЕШ на стадион „Уембли“ през 1992 г.</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="Стоичков_Кройф.jpg" alt="Стоичков и Кройф на тренировка">
+                    <p>Снимка 2: Специалната връзка и взаимно уважение между треньор и ученик.</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="Ромарио_Стоичков.jpg" alt="Ромарио и Стоичков">
+                    <p>Снимка 3: Смъртоносното дуо – Стоичков и Ромарио.</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="Златна_топка_1994.jpg" alt="Стоичков със Златната топка">
+                    <p>Снимка 4: Моментът, в който Камата представи Златната топка пред препълнения „Камп Ноу“.</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="Куман_гол.jpg" alt="Роналд Куман празнува">
+                    <p>Снимка 5: Роналд Куман след легендарния пряк свободен удар.</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="Отборна_снимка.jpg" alt="Дрийм Тимът на Барселона">
+                    <p>Снимка 6: Легендарният единадесеторка на Кройф, променила футбола.</p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>© 2026 Ретроспекция на ФК Барселона. Всички права запазени.</p>
+        <p>Създадено в чест на най-красивата ера във футбола.</p>
+    </footer>
+
+</body>
+</html>
